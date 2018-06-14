@@ -15,6 +15,7 @@ public class Book {
 
     }
 
+
     public Book(String sku, String bookTitle, String author, String description, double price, int stockQty)
     {
         this.bookTitle=bookTitle;
@@ -85,5 +86,6 @@ public class Book {
         double eachTotalPrice = price*orderQty;
         return eachTotalPrice;
     }
+
 
 }
