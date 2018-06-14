@@ -6,6 +6,7 @@ public class Book {
     String description;
     double price;
     int stockQty;
+    String sku;
 
 
 
@@ -14,13 +15,22 @@ public class Book {
 
     }
 
-    public Book(String bookTitle, String author, String description, double price, int stockQty)
+    public Book(String sku, String bookTitle, String author, String description, double price, int stockQty)
     {
         this.bookTitle=bookTitle;
         this.author=author;
         this.description=description;
         this.price=price;
         this.stockQty=stockQty;
+        this.sku=sku;
+    }
+
+    public String getSku() {
+        return sku;
+    }
+
+    public void setSku(String sku) {
+        this.sku = sku;
     }
 
     public String getBookTitle() {
@@ -65,7 +75,7 @@ public class Book {
 
     public String getDisplayText()
     {
-        String display = "The author: "+author+"\nThe title: "+bookTitle
+        String display ="The SKU: "+sku+"\nThe author: "+author+"\nThe title: "+bookTitle
                 +"\nThis book is: "+description+"\nThe Price: "+price;
         return display;
     }
