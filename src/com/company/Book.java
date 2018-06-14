@@ -5,20 +5,22 @@ public class Book {
     String author;
     String description;
     double price;
-    boolean isInStock;
+    int stockQty;
+
+
 
     public Book()
     {
 
     }
 
-    public Book(String bookTitle, String author, String description, double price, boolean isInStock)
+    public Book(String bookTitle, String author, String description, double price, int stockQty)
     {
         this.bookTitle=bookTitle;
         this.author=author;
         this.description=description;
         this.price=price;
-        this.isInStock=isInStock;
+        this.stockQty=stockQty;
     }
 
     public String getBookTitle() {
@@ -53,19 +55,25 @@ public class Book {
         this.price = price;
     }
 
-    public boolean isInStock() {
-        return isInStock;
+    public int getStockQty() {
+        return stockQty;
     }
 
-    public void setInStock(boolean inStock) {
-        isInStock = inStock;
+    public void setStockQty(int stockQty) {
+        this.stockQty = stockQty;
     }
 
     public String getDisplayText()
     {
         String display = "The author: "+author+"\nThe title: "+bookTitle
-                +"\nThis book is: "+description;
+                +"\nThis book is: "+description+"\nThe Price: "+price;
         return display;
+    }
+
+    public double getTotalPrice(int orderQty)
+    {
+        double eachTotalPrice = price*orderQty;
+        return eachTotalPrice;
     }
 
 }
